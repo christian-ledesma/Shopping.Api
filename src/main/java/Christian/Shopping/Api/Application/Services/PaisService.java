@@ -2,16 +2,16 @@ package Christian.Shopping.Api.Application.Services;
 
 import Christian.Shopping.Api.Application.Interfaces.IPaisService;
 import Christian.Shopping.Api.DTOs.Paises.PaisesListResponseDto;
-import Christian.Shopping.Api.Infrastructure.Repositories.PaisesRepository;
+import Christian.Shopping.Api.Infrastructure.Repositories.PaisRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class PaisService implements IPaisService {
-    private final PaisesRepository paisesRepository;
+    private final PaisRepository paisesRepository;
 
     @Autowired
-    public PaisService(PaisesRepository paisesRepository) {
+    public PaisService(PaisRepository paisesRepository) {
         this.paisesRepository = paisesRepository;
     }
 

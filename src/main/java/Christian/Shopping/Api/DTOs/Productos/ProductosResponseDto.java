@@ -1,13 +1,6 @@
-package Christian.Shopping.Api.Domain.Entities;
+package Christian.Shopping.Api.DTOs.Productos;
 
-import javax.persistence.*;
-
-@Entity
-@Table
-public class Productos {
-    @Id
-    @SequenceGenerator(name = "producto_sequence", sequenceName = "producto_sequence", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "producto_sequence")
+public class ProductosResponseDto {
     private Integer ProductoId;
     private String Nombre;
     private float Precio;
@@ -17,21 +10,8 @@ public class Productos {
     private String Descripcion;
     private String Imagen;
 
-    public Productos() {
-    }
-
-    public Productos(Integer productoId, String nombre, float precio, Integer categoriaId, boolean enStock, boolean esDestacado, String descripcion, String imagen) {
+    public ProductosResponseDto(Integer productoId, String nombre, float precio, Integer categoriaId, boolean enStock, boolean esDestacado, String descripcion, String imagen) {
         ProductoId = productoId;
-        Nombre = nombre;
-        Precio = precio;
-        CategoriaId = categoriaId;
-        EnStock = enStock;
-        EsDestacado = esDestacado;
-        Descripcion = descripcion;
-        Imagen = imagen;
-    }
-
-    public Productos(String nombre, float precio, Integer categoriaId, boolean enStock, boolean esDestacado, String descripcion, String imagen) {
         Nombre = nombre;
         Precio = precio;
         CategoriaId = categoriaId;
