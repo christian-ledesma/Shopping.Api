@@ -1,13 +1,6 @@
-package Christian.Shopping.Api.Domain.Entities;
+package Christian.Shopping.Api.DTOs.Usuarios;
 
-import javax.persistence.*;
-
-@Entity
-@Table
-public class Usuarios {
-    @Id
-    @SequenceGenerator(name = "usuario_sequence", sequenceName = "usuario_sequence", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "usuario_sequence")
+public class UsuariosEditRequestDto {
     private Integer UsuarioId;
     private String Nombre;
     private String Apellido1;
@@ -15,28 +8,6 @@ public class Usuarios {
     private String Email;
     private String Telefono;
     private Integer PaisId;
-
-    public Usuarios() {
-    }
-
-    public Usuarios(String nombre, String apellido1, String apellido2, String email, String telefono, Integer paisId) {
-        Nombre = nombre;
-        Apellido1 = apellido1;
-        Apellido2 = apellido2;
-        Email = email;
-        Telefono = telefono;
-        PaisId = paisId;
-    }
-
-    public Usuarios(Integer usuarioId, String nombre, String apellido1, String apellido2, String email, String telefono, Integer paisId) {
-        UsuarioId = usuarioId;
-        Nombre = nombre;
-        Apellido1 = apellido1;
-        Apellido2 = apellido2;
-        Email = email;
-        Telefono = telefono;
-        PaisId = paisId;
-    }
 
     public Integer getUsuarioId() {
         return UsuarioId;
