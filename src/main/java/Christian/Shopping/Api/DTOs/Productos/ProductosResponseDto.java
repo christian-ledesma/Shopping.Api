@@ -5,17 +5,17 @@ public class ProductosResponseDto {
     private String Nombre;
     private float Precio;
     private Integer CategoriaId;
-    private boolean EnStock;
+    private boolean Disponible;
     private boolean EsDestacado;
     private String Descripcion;
     private String Imagen;
 
-    public ProductosResponseDto(Integer productoId, String nombre, float precio, Integer categoriaId, boolean enStock, boolean esDestacado, String descripcion, String imagen) {
+    public ProductosResponseDto(Integer productoId, String nombre, float precio, Integer categoriaId, boolean disponible, boolean esDestacado, String descripcion, String imagen) {
         ProductoId = productoId;
         Nombre = nombre;
         Precio = precio;
         CategoriaId = categoriaId;
-        EnStock = enStock;
+        Disponible = disponible;
         EsDestacado = esDestacado;
         Descripcion = descripcion;
         Imagen = imagen;
@@ -53,12 +53,12 @@ public class ProductosResponseDto {
         CategoriaId = categoriaId;
     }
 
-    public boolean isEnStock() {
-        return EnStock;
+    public boolean isDisponible() {
+        return Disponible;
     }
 
-    public void setEnStock(boolean enStock) {
-        EnStock = enStock;
+    public void setDisponible(boolean disponible) {
+        Disponible = disponible;
     }
 
     public boolean isEsDestacado() {

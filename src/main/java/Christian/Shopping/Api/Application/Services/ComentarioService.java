@@ -2,8 +2,9 @@ package Christian.Shopping.Api.Application.Services;
 
 import Christian.Shopping.Api.Application.Interfaces.IComentarioService;
 import Christian.Shopping.Api.DTOs.Comentarios.ComentariosCreateRequestDto;
-import Christian.Shopping.Api.DTOs.Comentarios.ComentariosCreateResponseDto;
+import Christian.Shopping.Api.DTOs.Comentarios.ComentariosResponseDto;
 import Christian.Shopping.Api.DTOs.Comentarios.ComentariosListResponseDto;
+import Christian.Shopping.Api.DTOs.Comentarios.ComentariosUpdateRequestDto;
 import Christian.Shopping.Api.Domain.Entities.Comentarios;
 import Christian.Shopping.Api.Infrastructure.Repositories.ComentarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +19,18 @@ public class ComentarioService implements IComentarioService {
         this.comentarioRepository = comentarioRepository;
     }
 
-    public ComentariosCreateResponseDto Add(ComentariosCreateRequestDto request) {
+    public ComentariosResponseDto Add(ComentariosCreateRequestDto request) {
         var comentario = new Comentarios(request.getComentario(), request.getUsuarioId(), request.getProductoId());
         var _comentario = comentarioRepository.save(comentario);
-        return new ComentariosCreateResponseDto(
+        return new ComentariosResponseDto(
+                _comentario.getComentarioId(), _comentario.getComentario(),
+                _comentario.getProductoId(), _comentario.getUsuarioId());
+    }
+
+    public ComentariosResponseDto Update(ComentariosUpdateRequestDto request) {
+        var comentario = new Comentarios(request.getComentarioId(), request.getComentario(), request.getUsuarioId(), request.getProductoId());
+        var _comentario = comentarioRepository.save(comentario);
+        return new ComentariosResponseDto(
                 _comentario.getComentarioId(), _comentario.getComentario(),
                 _comentario.getProductoId(), _comentario.getUsuarioId());
     }

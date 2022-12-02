@@ -16,6 +16,13 @@ public class Comentarios {
     public Comentarios() {
     }
 
+    public Comentarios(Integer comentarioId, String comentario, Integer usuarioId, Integer productoId) {
+        ComentarioId = comentarioId;
+        Comentario = comentario;
+        UsuarioId = usuarioId;
+        ProductoId = productoId;
+    }
+
     public Comentarios(String comentario, Integer usuarioId, Integer productoId) {
         Comentario = comentario;
         UsuarioId = usuarioId;

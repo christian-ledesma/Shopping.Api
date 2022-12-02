@@ -2,8 +2,9 @@ package Christian.Shopping.Api.Controllers;
 
 import Christian.Shopping.Api.Application.Interfaces.IComentarioService;
 import Christian.Shopping.Api.DTOs.Comentarios.ComentariosCreateRequestDto;
-import Christian.Shopping.Api.DTOs.Comentarios.ComentariosCreateResponseDto;
+import Christian.Shopping.Api.DTOs.Comentarios.ComentariosResponseDto;
 import Christian.Shopping.Api.DTOs.Comentarios.ComentariosListResponseDto;
+import Christian.Shopping.Api.DTOs.Comentarios.ComentariosUpdateRequestDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,8 +19,13 @@ public class ComentariosController {
     }
 
     @PostMapping
-    public ComentariosCreateResponseDto Add(@RequestBody ComentariosCreateRequestDto request) {
+    public ComentariosResponseDto Add(@RequestBody ComentariosCreateRequestDto request) {
         return comentarioService.Add(request);
+    }
+
+    @PutMapping
+    public ComentariosResponseDto Update(@RequestBody ComentariosUpdateRequestDto request) {
+        return comentarioService.Update(request);
     }
 
     @GetMapping(path = "findByUsuario/{id}")

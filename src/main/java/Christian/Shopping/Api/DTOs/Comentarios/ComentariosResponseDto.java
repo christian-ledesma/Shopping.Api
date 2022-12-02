@@ -1,12 +1,12 @@
 package Christian.Shopping.Api.DTOs.Comentarios;
 
-public class ComentariosCreateResponseDto {
+public class ComentariosResponseDto {
     private Integer ComentarioId;
     private String Comentario;
     private Integer ProductoId;
     private Integer UsuarioId;
 
-    public ComentariosCreateResponseDto(Integer comentarioId, String comentario, Integer productoId, Integer usuarioId) {
+    public ComentariosResponseDto(Integer comentarioId, String comentario, Integer productoId, Integer usuarioId) {
         ComentarioId = comentarioId;
         Comentario = comentario;
         ProductoId = productoId;

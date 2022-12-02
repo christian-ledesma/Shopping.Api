@@ -1,11 +1,11 @@
 package Christian.Shopping.Api.DTOs.Productos;
 
-public class ProductosEditRequestDto {
+public class ProductosUpdateRequestDto {
     private Integer ProductoId;
     private String Nombre;
     private float Precio;
     private Integer CategoriaId;
-    private boolean EnStock;
+    private boolean Disponible;
     private boolean EsDestacado;
     private String Descripcion;
     private String Imagen;
@@ -42,12 +42,12 @@ public class ProductosEditRequestDto {
         CategoriaId = categoriaId;
     }
 
-    public boolean isEnStock() {
-        return EnStock;
+    public boolean isDisponible() {
+        return Disponible;
     }
 
-    public void setEnStock(boolean enStock) {
-        EnStock = enStock;
+    public void setDisponible(boolean disponible) {
+        Disponible = disponible;
     }
 
     public boolean isEsDestacado() {

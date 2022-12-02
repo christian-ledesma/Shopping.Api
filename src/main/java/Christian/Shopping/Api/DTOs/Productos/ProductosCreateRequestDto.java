@@ -4,7 +4,7 @@ public class ProductosCreateRequestDto {
     private String Nombre;
     private float Precio;
     private Integer CategoriaId;
-    private boolean EnStock;
+    private boolean Disponible;
     private boolean EsDestacado;
     private String Descripcion;
     private String Imagen;
@@ -33,12 +33,12 @@ public class ProductosCreateRequestDto {
         CategoriaId = categoriaId;
     }
 
-    public boolean isEnStock() {
-        return EnStock;
+    public boolean isDisponible() {
+        return Disponible;
     }
 
-    public void setEnStock(boolean enStock) {
-        EnStock = enStock;
+    public void setDisponible(boolean disponible) {
+        Disponible = disponible;
     }
 
     public boolean isEsDestacado() {
